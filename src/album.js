@@ -1,4 +1,7 @@
 import { asset, loadManifest, getParam, esc } from './lib.js';
+import { initLayout } from './layout.js';
+
+initLayout('albums');
 
 const grid = document.getElementById('media');
 const titleEl = document.getElementById('album-title');

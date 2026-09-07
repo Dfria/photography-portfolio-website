@@ -72,14 +72,13 @@ video {
   z-index: 10;
 }
 
-.site-header .container {
+.site-header .nav {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  padding-top: 22px;
-  padding-bottom: 22px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   gap: 16px;
-  flex-wrap: wrap;
 }
 
 .brand {
@@ -93,19 +92,28 @@ video {
   font-weight: 400;
 }
 
-.tagline {
-  color: var(--text-muted);
-  font-size: 0.92rem;
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
 }
 
-.back-link {
+.nav-link {
   color: var(--text-muted);
-  font-size: 0.92rem;
-  transition: color 0.15s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 4px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.back-link:hover {
+.nav-link:hover {
   color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
 }
 
 /* Page intro */
@@ -317,16 +325,276 @@ video {
 .site-footer {
   border-top: 1px solid var(--border);
   color: var(--text-muted);
-  font-size: 0.85rem;
-  padding: 28px 0;
+  font-size: 0.9rem;
+  padding: 36px 0;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
   text-align: center;
 }
 
-@media (max-width: 520px) {
+.footer-brand {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+/* Contact form */
+.contact-wrap {
+  padding: 20px 0 60px;
+}
+
+.contact-form {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.field input,
+.field textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--text) 45%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--text) 12%, transparent);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn {
+  align-self: flex-start;
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.form-status {
+  margin: 4px 0 0;
+  font-size: 0.92rem;
+  min-height: 1.2em;
+}
+
+.form-status.ok {
+  color: #4ade80;
+}
+
+.form-status.err {
+  color: #f87171;
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive / mobile
+   --------------------------------------------------------------------------- */
+
+/* Tablets and small laptops */
+@media (max-width: 820px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .page-intro {
+    padding: 32px 0 4px;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    padding: 20px 0 48px;
+  }
+
+  .media-grid {
+    columns: 2 240px;
+  }
+}
+
+/* Phones */
+@media (max-width: 560px) {
+  .site-header .nav {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    /* Bigger vertical tap area without changing look */
+    padding: 8px 2px;
+  }
+
+  .page-intro {
+    padding: 24px 0 4px;
+  }
+
+  .page-intro p {
+    font-size: 0.95rem;
+  }
+
+  /* Single, comfortable column of album cards */
+  .album-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 18px 0 40px;
+  }
+
+  .album-card .thumb {
+    aspect-ratio: 3 / 2;
+  }
+
+  /* One column of media so photos are big and legible */
+  .media-grid {
+    columns: 1;
+    padding: 18px 0 40px;
+  }
+
+  /* Lightbox: use full width, move controls to easy-reach spots,
+     and make tap targets larger */
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-content img,
+  .lightbox-content video {
+    max-width: 96vw;
+    max-height: 82vh;
+  }
+
+  .lightbox-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+  }
+
   .lightbox-prev {
     left: 8px;
+    top: auto;
+    bottom: 16px;
+    transform: none;
   }
+
   .lightbox-next {
     right: 8px;
+    top: auto;
+    bottom: 16px;
+    transform: none;
+  }
+
+  .lightbox-caption {
+    bottom: 78px;
+  }
+
+  /* Contact form fills the width; 16px inputs prevent iOS zoom-on-focus */
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .field input,
+  .field textarea {
+    font-size: 16px;
+  }
+
+  .btn {
+    align-self: stretch;
+    text-align: center;
+    padding: 14px 22px;
+  }
+
+  .footer-links {
+    gap: 8px 14px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .album-card:hover,
+  .media-item:hover {
+    transform: none;
   }
 }

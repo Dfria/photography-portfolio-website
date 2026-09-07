@@ -17,6 +17,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         album: resolve(__dirname, 'album.html'),
+        contact: resolve(__dirname, 'contact.html'),
       },
     },
   },

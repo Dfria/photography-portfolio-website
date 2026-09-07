@@ -1,4 +1,7 @@
 import { asset, pageLink, loadManifest, esc } from './lib.js';
+import { initLayout } from './layout.js';
+
+initLayout('albums');
 
 const container = document.getElementById('albums');
 

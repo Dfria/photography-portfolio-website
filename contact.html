@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Dallas Frias</title>
+    <meta name="description" content="Get in touch for bookings and inquiries." />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <main class="container">
+      <section class="page-intro">
+        <h1>Contact</h1>
+        <p>
+          For bookings, prints, or questions, send a message below and I'll
+          get back to you.
+        </p>
+      </section>
+
+      <section class="contact-wrap">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" />
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn" id="submit-btn">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="/src/contact.js"></script>
+  </body>
+</html>

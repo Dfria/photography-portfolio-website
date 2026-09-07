@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Photography</title>
+    <meta
+      name="description"
+      content="A photography and video portfolio organized by shoot."
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="brand">Portfolio<span>.</span></div>
+        <div class="tagline">Photography &amp; video, by shoot</div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="page-intro">
+        <h1>Work</h1>
+        <p>
+          A collection of shoots. Select an album to view the full set of
+          photos and videos.
+        </p>
+      </section>
+
+      <section id="albums" class="album-grid" aria-live="polite">
+        <div class="state">Loading albums…</div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        Built as a static site · Deployed on GitHub Pages
+      </div>
+    </footer>
+
+    <script type="module" src="/src/home.js"></script>
+  </body>
+</html>

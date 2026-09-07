@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+*.log
+
+# The manifest is generated at build time. It is safe to ignore so it never
+# goes stale in git. The build always regenerates it.
+public/albums.json

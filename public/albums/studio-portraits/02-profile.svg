@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <defs>
+    <radialGradient id="g" cx="40%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#5a5060"/>
+      <stop offset="100%" stop-color="#17141a"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#g)"/>
+  <circle cx="520" cy="440" r="170" fill="#9a8f9f"/>
+  <text x="500" y="940" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#fff" opacity="0.8">Profile · placeholder</text>
+</svg>
